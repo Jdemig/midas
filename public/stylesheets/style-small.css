@@ -1,0 +1,38 @@
+.m-nav-bars {
+  display: block;
+  float: right;
+  background: none;
+  border: none;
+  padding: 5px 20px;
+  font-size: 25px;
+  line-height: 20px;
+}
+.m-nav {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(233, 207, 118);
+}
+.m-nav-positioning {
+  top: 50%;
+  position: relative;
+  float: left;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.m-nav-button {
+  font-size: 20px;
+  width: 100%;
+  position: relative;
+  float: left;
+  text-align: center;
+  color: black;
+  margin: 5px 0;
+}
+.m-nav-button:hover {
+  text-decoration: none;
+}
+.nav {
+  display: none;
+}

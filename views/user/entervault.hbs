@@ -1,0 +1,32 @@
+
+
+<h1 class='single-header cart-header' >{{title}}</h1>
+
+
+<img id='vault-img' src="../images/vault.jpg" alt="Enter the Vault" style="width:auto;max-width:100%">
+
+
+<div id='signin-container'>
+    {{#if hasErrors}}
+      <div class='alert alert-danger'>
+        {{# each messages }}
+          <p>{{this}}</p>
+        {{/each}}
+      </div>
+    {{/if}}
+  <form class='user-form' action='/user/entervault' method='post'>
+    <div class='form-group'>
+      <input type='text' id='email' name='email' class='form-control' placeholder='email*' > </input>
+    </div>
+    <div class='form-group'>
+      <input type='password' id='password' name='password' class='form-control' placeholder='password*'> </input>
+    </div>
+    <input type='hidden' name='_csrf' value='{{ csrfToken }}'>
+    <div class='button-container' >
+      <button type='submit' class='btn btn-primary'>Sign In</button>
+    </div>
+    <div class='m-nav-button horizontal-separator2'></div>
+    <a type='submit' class='link-button new-account' href='/user/signup' >New Account</a>
+    <a type='submit' class='link-button reset-pass' href='/user/resetpass' style='margin-top:15px' >Reset Password</a>
+  </form>
+</div>

@@ -1,0 +1,46 @@
+Listening on on port 12125
+null
+{ code: 1105,
+  message: 'bad access_token',
+  resolve: 'This access_token appears to be corrupted.',
+  access_token: '',
+  statusCode: 401 }
+[0mGET /user/account [31m500 [0m484.058 ms - 2576[0m
+[0mGET /favicon.ico [31m500 [0m173.810 ms - 2592[0m
+null
+{ code: 1105,
+  message: 'bad access_token',
+  resolve: 'This access_token appears to be corrupted.',
+  access_token: '',
+  statusCode: 401 }
+[0mGET /user/account [31m500 [0m281.738 ms - 2576[0m
+[0mGET /favicon.ico [31m500 [0m181.287 ms - 2592[0m
+null
+{ code: 1105,
+  message: 'bad access_token',
+  resolve: 'This access_token appears to be corrupted.',
+  access_token: '',
+  statusCode: 401 }
+[0mGET /user/account [31m500 [0m291.431 ms - 2576[0m
+[0mGET /favicon.ico [31m500 [0m165.161 ms - 2592[0m
+null
+{ code: 1105,
+  message: 'bad access_token',
+  resolve: 'This access_token appears to be corrupted.',
+  access_token: '',
+  statusCode: 401 }
+[0mGET /user/account [31m500 [0m343.555 ms - 2576[0m
+[0mGET /favicon.ico [31m500 [0m158.189 ms - 2592[0m
+null
+{ code: 1105,
+  message: 'bad access_token',
+  resolve: 'This access_token appears to be corrupted.',
+  access_token: '',
+  statusCode: 401 }
+[0mGET /user/account [31m500 [0m306.315 ms - 2576[0m
+[0mGET /favicon.ico [31m500 [0m160.695 ms - 2592[0m
+[0mGET /robots.txt [31m500 [0m221.081 ms - 2592[0m
+[0mGET /robots.txt [31m500 [0m210.840 ms - 2592[0m
+[0mGET /robots.txt [31m500 [0m161.247 ms - 2592[0m
+[0mGET /robots.txt [31m500 [0m185.557 ms - 2592[0m
+[0mGET / [31m500 [0m166.959 ms - 2576[0m

@@ -1,0 +1,57 @@
+<h1 class='single-header cart-header' >{{title}}</h1>
+
+<form action="/admin/ounceConversion" method="post">
+  <select name="selector">
+    <option value="0" name="ounces" {{unitObj.ounces}} >Ounces</option>
+    <option value="1" name="thousandths" {{unitObj.milliounces}} >Thousandths of Ounces</option>
+    <option value="2" name="grams" {{unitObj.grams}} >Grams</option>
+  </select>
+  <input type="submit">
+  <input type='hidden' name='_csrf' value='{{ csrfToken }}'>
+</form>
+{{#if accounts}}
+  {{#each accounts}}
+    <p><strong>Name: </strong>{{this.meta.name}}</p>
+    <p><strong>Type: </strong>{{this.type}}</p>
+    {{#if ../isAdmin}}
+      <p><strong>Available Balance: </strong>${{this.balance.available}}</p>
+      <p><strong>Current Balance: </strong>${{this.balance.current}}</p>
+    {{/if}}
+  {{/each}}
+  <p><strong>Balance: </strong>{{balanceInOunces}} {{units}}</p>
+  <h1 class='single-header cart-header' >Transactions</h2>
+  {{#each transactions}}
+    <h3 class='account-purchase' >Transaction</h3>
+    <p><strong>Amount: </strong>${{this.amount}}</p>
+    {{#if this.amountInOunces}}
+      <p><strong>Amount in {{../units}}: </strong>{{this.amountInOunces}}</p>
+    {{/if}}
+    {{#if this.balanceAfterTransaction}}
+      <p><strong>Balance After Transaction: </strong>{{this.balanceAfterTransaction}} {{../units}}</p>
+    {{/if}}
+    {{#if this.name}}
+      <p><strong>Name: </strong>{{this.name}}</p>
+    {{/if}}
+    {{#if this.date}}
+      <p><strong>Date: </strong>{{this.date}}</p>
+    {{/if}}
+    {{#if this.category}}
+      <p><strong>Category: </strong>{{#each this.category}}{{this}}, {{/each}}</p>
+    {{/if}}
+    {{#if this.meta.location.address}}
+      <p><strong>Address: </strong>{{this.meta.location.address}}</p>
+    {{/if}}
+    {{#if this.meta.location.city}}
+      <p><strong>City: </strong>{{this.meta.location.city}}</p>
+    {{/if}}
+    {{#if this.meta.location.state}}
+      <p><strong>State: </strong>{{this.meta.location.state}}</p>
+    {{/if}}
+    {{#if this.meta.location.zip}}
+      <p><strong>Zip: </strong>{{this.meta.location.zip}}</p>
+    {{/if}}
+  {{/each}}
+{{else}}
+  <h2>Looks like you haven't made an accounts with us yet. Contact us to create one.</h2>
+  <a href='/contact/message' > Visit Contact Page </a>
+{{/if}}

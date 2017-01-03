@@ -1,0 +1,345 @@
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+Error: Failed to lookup view "error" in views directory "/views"
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:579:17)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:129:7
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at IncomingMessage.next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at done (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:956:25)
+    at EventEmitter.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/application.js:581:14)
+    at ServerResponse.render (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/response.js:961:7)
+    at /home/johnwiltbank/webapps/nodeapp/app.js:118:9
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:71:5)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
+    at Layer.handle_error (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/layer.js:67:12)
+    at trim_prefix (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:310:13)
+    at /home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:330:12)
+    at next (/home/johnwiltbank/webapps/nodeapp/node_modules/express/lib/router/index.js:271:10)
