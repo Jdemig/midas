@@ -18,6 +18,10 @@ router.get('/admin', isAdmin, function(req, res, next) {
   res.render('admin/admin', {title: 'Admin', csrfToken: req.csrfToken() });
 });
 
+router.get('/overview', isAdmin, function(req, res, next) {
+  res.render('admin/overview', {title: 'Overview', csrfToken: req.csrfToken() });
+});
+
 router.post('/deposit', isAdmin, function(req, res, next) {
 
   var email = req.body.email;

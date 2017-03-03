@@ -6,9 +6,9 @@ mongoose.Promise = require('bluebird');
 mongoose.connect('localhost:29131/admin');
 
 var goldPrice = new GoldPrice({
-  goldPrice: 1145.90,
-  marketCloseDate: "2016-12-29",
-  actualDate: "2016-12-30"
+  goldPrice: 1151.00,
+  marketCloseDate: "2017-01-03",
+  actualDate: "2017-01-03"
 });
 
 goldPrice.save(function(err) {

@@ -16,7 +16,7 @@ router.get('/intro', function(req, res) {
   res.render('content/intro', { title: 'Midas Gold' });
 });
 router.get('/sign-up', function(req, res) {
-  res.render('content/signup', { title: 'Midas Gold' });
+  res.render('user/signup', { title: 'Midas Gold' });
 });
 router.get('/blog', function(req, res) {
   res.render('content/blog', { title: 'Midas Gold' });
@@ -32,7 +32,7 @@ function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   } else {
-    res.redirect('/user/signin');
+    res.redirect('/user/signup');
   }
 }
 

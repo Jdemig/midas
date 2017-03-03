@@ -7,10 +7,10 @@ mongoose.connect('localhost:29131/admin');
 
 
 
-User.update({'email': 'jonathan.emig@gmail.com'}, 
+User.update({'email': 'johnwiltbank@yahoo.com'}, 
   {
     $set: {
-      accessToken: '142d2dd8ac0a7e9d82614e50d0494e52638803b4334ce96cad57e92588cd88b6bbd2d48c66b27677891fd940d2fed459641cc327e6c27856186fb5a8686934c95d7a755279eb4a03b543a0f0fa2ed8ea'
+      accessToken: '142d2dd8ac0a7e9d82614e50d0494e52efd2cb91043206e28255df03d2ca1bcc98e2d6f13b760c5a9241c2f87ac8f8344803efd5fd9e070b62707394f3c41c956c5d98b4286b2cd1cb37d579f58cf3c9'
     }
   }, {
     multi: false

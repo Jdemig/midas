@@ -1,26 +1,100 @@
-<div id="wsite-content" class="wsite-elements wsite-not-footer">
+<div id="header-wrap">
+  <table id="header">
+    <tr>
+      <td id="logo">
+        <span class="m1-0-logo">
+          <a href="/">
+            <span id="m1-0-title">MIDAS</span>
+          </a>
+        </span>
+      </td>
+
+      <td class="nav">
+        <ul class="m1-0-menu-default">
+          <li class="m1-0-menu-item-wrap" >
+            <a href="/intro" class="m1-0-menu-item" >Intro</a>
+          </li>
+          {{#if login }}
+            {{#if admin}}
+              <li class="m1-0-menu-item-wrap" >
+                <a href="/admin/admin" class="m1-0-menu-item" >Admin</a>
+              </li>
+            {{/if}}
+            <li class="m1-0-menu-item-wrap" >
+              <a href="/user/account" class="m1-0-menu-item" >Account</a>
+            </li>
+            <li class="m1-0-menu-item-wrap" >
+              <a href="/user/logout" class="m1-0-menu-item" >Logout</a>
+            </li>
+          {{else}}
+            <li class="m1-0-menu-item-wrap" >
+              <a href="/user/signup" class="m1-0-menu-item" >Sign up</a>
+            </li>
+            <li class="m1-0-menu-item-wrap" >
+              <a href="/user/entervault" class="m1-0-menu-item" >Vault</a>
+            </li>
+          {{/if}}
+          <li class="m1-0-menu-item-wrap" >
+            <a href="/blog" class="m1-0-menu-item" >Blog</a>
+          </li>
+          <li id="active" class="m1-0-menu-item-wrap" >
+            <a href="/contact/message" class="m1-0-menu-item" >Contact</a>
+          </li>
+        </ul>
+      </td>
+
+      <td class="search">${{goldData}}/oz</td>
+    </tr>
+  </table>
+</div><!-- end header-wrap -->
+
+<div class='m-nav' id='m-nav' >
+  <div class='m-nav-positioning'>
+    <a href="/intro" class="m-nav-button" >Intro</a>
+    {{# if login }}
+      {{#if admin}}
+        <a class='m-nav-button' href='/admin/overview' >Overview (admin)</a>
+      {{/if}}
+      <a class='m-nav-button' href='/user/account' >Account</a>
+      <a class='m-nav-button' href='/user/logout' >Logout</a>
+    {{ else }}
+      <a class='m-nav-button' href='/user/entervault' >Enter Vault</a>
+      <a class='m-nav-button' href='/user/signup' >Sign Up</a>
+    {{/if}}
+    <a href="/blog" class="m-nav-button" >Blog</a>
+    <a href="/contact" class="m-nav-button" >Contact</a>
+  </div>
+</div>
+
+
+
+
+
+    <div id='main-wrap'>
+      <div class='container'>
+<div id="m1-0-content" class="m1-0-elements m1-0-not-footer">
   <div>
-    <div class="wsite-image wsite-image-border-none " style="padding-top:10px; padding-bottom:10px; margin-left:0; margin-right:0; text-align:center; ">
+    <div class="m1-0-image m1-0-image-border-none " style="padding-top:10px; padding-bottom:10px; margin-left:0; margin-right:0; text-align:center; ">
       <a href="mailto:John@Midas.gold">
-        <img src="../images/426568.jpg" alt="Picture" style="width:auto;max-width:100%">
+        <img src="../images/bell.jpg" alt="Picture" style="width:auto;max-width:100%">
       </a>
     </div>
   </div>
 
   <div>
-    <div class="wsite-multicol">
-      <div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
-      <table class="wsite-multicol-table">
-        <tbody class="wsite-multicol-tbody">
-          <tr class="wsite-multicol-tr">
-            <td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+    <div class="m1-0-multicol">
+      <div class="m1-0-multicol-table-wrap" style="margin:0 -15px;">
+      <table class="m1-0-multicol-table">
+        <tbody class="m1-0-multicol-tbody">
+          <tr class="m1-0-multicol-tr">
+            <td class="m1-0-multicol-col" style="width:50%; padding:0 15px;">
               <div>
                 <a>
-                  <img src="../images/4398726.jpg" alt="Picture" style="width:435;max-width:100%">
+                  <img src="../images/businesscard.jpg" alt="Picture" style="width:435;max-width:100%">
                 </a>
               </div>
             </td>       
-            <td class="wsite-multicol-col" style="width:50%; padding:0 15px;">
+            <td class="m1-0-multicol-col" style="width:50%; padding:0 15px;">
 
 
             <div id="570972898857986598" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml">

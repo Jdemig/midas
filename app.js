@@ -31,7 +31,8 @@ function callCron(time) {
   var job = new CronJob(time, getGoldPrice , null, true, 'America/Los_Angeles');
   job.start();
 }
-callCron("0 0 9 * * *");
+callCron("0 0 9-23 * * *");
+callCron("0 30 9,10 * * *");
 
 var app = express();
 
@@ -81,6 +82,8 @@ app.use(function(req, res, next) {
         app.locals.goldData = gold[0].goldPrice;
         if (decimalPlaces(app.locals.goldData) == 1) {
           app.locals.goldData = app.locals.goldData + "0";
+        } else if (decimalPlaces(app.locals.goldData) == 0) {
+          app.locals.goldData = app.locals.goldData + ".00";
         }
         next();
       }
@@ -170,19 +173,21 @@ function decimalPlaces(num) {
 }
 
 function newGoldDocument(goldPrice, marketCloseDate, actualDate) {
-
-  var gold = new GoldPrice({
-    goldPrice: goldPrice, 
-    marketCloseDate: marketCloseDate,
-    actualDate: actualDate
-  });
-  gold.save(function(err) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log('New gold price is now in the database');
+  GoldPrice.update({ actualDate: actualDate }, 
+    {
+      $set: {
+        goldPrice: goldPrice, 
+        marketCloseDate: marketCloseDate,
+        actualDate: actualDate
+      }
+    }, {
+      upsert: true
+    }, function(err, result) {
+      if (err) {
+        console.log(err);
+      } 
     }
-  });
+  );
 }
 
 function getGoldPrice() {
@@ -202,8 +207,27 @@ function getGoldPrice() {
     if (response) {
       var actualDate = new Date().toJSON().slice(0, 10);
       var test = JSON.parse(response);
-      if (typeof test.dataset.data[2] != "undefined") {
-        newGoldDocument( test.dataset.data[2][1], test.dataset.data[2][0], actualDate );
+
+      console.log(test.dataset);
+      console.log(actualDate);
+
+      if (test.dataset.end_date == actualDate) {
+
+        console.log('new date');
+        if ( typeof test.dataset.data[3] != "undefined") {
+          console.log('3');
+          newGoldDocument( test.dataset.data[3][1], test.dataset.data[3][0], actualDate );
+        } else if ( typeof test.dataset.data[2] != "undefined" ) {
+          console.log('2');
+          newGoldDocument( test.dataset.data[2][1], test.dataset.data[2][0], actualDate );
+        } else if ( typeof test.dataset.data[1] != "undefined" ) {
+          console.log('1');
+          newGoldDocument( test.dataset.data[1][1], test.dataset.data[1][0], actualDate );
+        } else {
+          console.log('0');
+          newGoldDocument( test.dataset.data[0][1], test.dataset.data[0][0], actualDate );
+        }
+      
       } else {
 
         var today = new Date();

@@ -1,32 +1,105 @@
+<div id="header-wrap">
+  <table id="header">
+    <tr>
+      <td id="logo">
+        <span class="m1-0-logo">
+          <a href="/">
+            <span id="m1-0-title">MIDAS</span>
+          </a>
+        </span>
+      </td>
 
+      <td class="nav">
+        <ul class="m1-0-menu-default">
+          <li class="m1-0-menu-item-wrap" >
+            <a href="/intro" class="m1-0-menu-item" >Intro</a>
+          </li>
+          {{#if login }}
+            {{#if admin}}
+              <li class="m1-0-menu-item-wrap" >
+                <a href="/admin/admin" class="m1-0-menu-item" >Admin</a>
+              </li>
+            {{/if}}
+            <li class="m1-0-menu-item-wrap" >
+              <a href="/user/account" class="m1-0-menu-item" >Account</a>
+            </li>
+            <li class="m1-0-menu-item-wrap" >
+              <a href="/user/logout" class="m1-0-menu-item" >Logout</a>
+            </li>
+          {{else}}
+            <li class="m1-0-menu-item-wrap" >
+              <a href="/user/signup" class="m1-0-menu-item" >Sign up</a>
+            </li>
+            <li id="active" class="m1-0-menu-item-wrap" >
+              <a href="/user/entervault" class="m1-0-menu-item" >Vault</a>
+            </li>
+          {{/if}}
+          <li class="m1-0-menu-item-wrap" >
+            <a href="/blog" class="m1-0-menu-item" >Blog</a>
+          </li>
+          <li class="m1-0-menu-item-wrap" >
+            <a href="/contact/message" class="m1-0-menu-item" >Contact</a>
+          </li>
+        </ul>
+      </td>
 
-<h1 class='single-header cart-header' >{{title}}</h1>
+      <td class="search">${{goldData}}/oz</td>
+    </tr>
+  </table>
+</div><!-- end header-wrap -->
 
-
-<img id='vault-img' src="../images/vault.jpg" alt="Enter the Vault" style="width:auto;max-width:100%">
-
-
-<div id='signin-container'>
-    {{#if hasErrors}}
-      <div class='alert alert-danger'>
-        {{# each messages }}
-          <p>{{this}}</p>
-        {{/each}}
-      </div>
+<div class='m-nav' id='m-nav' >
+  <div class='m-nav-positioning'>
+    <a href="/intro" class="m-nav-button" >Intro</a>
+    {{# if login }}
+      {{#if admin}}
+        <a class='m-nav-button' href='/admin/overview' >Overview (admin)</a>
+      {{/if}}
+      <a class='m-nav-button' href='/user/account' >Account</a>
+      <a class='m-nav-button' href='/user/logout' >Logout</a>
+    {{ else }}
+      <a class='m-nav-button' href='/user/entervault' >Enter Vault</a>
+      <a class='m-nav-button' href='/user/signup' >Sign Up</a>
     {{/if}}
-  <form class='user-form' action='/user/entervault' method='post'>
-    <div class='form-group'>
-      <input type='text' id='email' name='email' class='form-control' placeholder='email*' > </input>
-    </div>
-    <div class='form-group'>
-      <input type='password' id='password' name='password' class='form-control' placeholder='password*'> </input>
-    </div>
-    <input type='hidden' name='_csrf' value='{{ csrfToken }}'>
-    <div class='button-container' >
-      <button type='submit' class='btn btn-primary'>Sign In</button>
-    </div>
-    <div class='m-nav-button horizontal-separator2'></div>
-    <a type='submit' class='link-button new-account' href='/user/signup' >New Account</a>
-    <a type='submit' class='link-button reset-pass' href='/user/resetpass' style='margin-top:15px' >Reset Password</a>
-  </form>
+    <a href="/blog" class="m-nav-button" >Blog</a>
+    <a href="/contact" class="m-nav-button" >Contact</a>
+  </div>
 </div>
+
+
+
+
+    <div id='main-wrap'>
+      <div class='container'>
+<div id="m1-0-content" class="m1-0-elements m1-0-not-footer">
+
+<center>
+<div style="display: table; width:656px; height: 650px; padding-top:10px; padding-bottom:10px; margin-left:0; margin-right:0; text-align:center; background-image: url('../images/vault.jpg'); background-repeat: no-repeat; background-position: center center; align-items: center">
+
+<div class='vault-sign-in' style=" display: table-cell; vertical-align: middle; ">
+<div style=" display: inline-block;">
+{{#if hasErrors}}
+    <div class='alert alert-danger'>
+      {{# each messages }}
+        <p>{{this}}</p>
+      {{/each}}
+    </div>
+  {{/if}}
+<form class='user-form' action='/user/entervault' method='post'>
+  <div class='form-group'>
+    <input type='email' id='email' name='email' class='vault-sign-in' placeholder='Email Address' > </input>
+  </div>
+  <br>
+  <div class='form-group'>
+    <input type='password' id='password' name='password' class='vault-sign-in' placeholder='Password'> </input>
+  </div>
+  <br><br>
+  <input type='hidden' name='_csrf' value='{{ csrfToken }}'>
+  <div class='button-container' >
+    <button type='submit' class='vault-sign-in' id='btn btn-primary'><strong>Enter the Vault</strong></button>
+  </div>
+    </form>
+</div></div></div></center>
+
+</div>
+

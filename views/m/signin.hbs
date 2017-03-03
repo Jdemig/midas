@@ -1,0 +1,30 @@
+
+<div id="wsite-content" class="wsite-elements wsite-not-footer">
+
+<center>
+<div class="wsite-image wsite-image-border-none" style="display: table; width:656px; height: 650px; padding-top:10px; padding-bottom:10px; margin-left:0; margin-right:0; text-align:center; background-image: url('../images/vault.jpg'); background-repeat: no-repeat; background-position: center center; align-items: center">
+
+<div id="vault-sign-in" style=" display: table-cell; vertical-align: middle; ">
+<div style=" display: inline-block;">
+{{#if hasErrors}}
+    <div class='alert alert-danger'>
+      {{# each messages }}
+        <p>{{this}}</p>
+      {{/each}}
+    </div>
+  {{/if}}
+<form class='user-form' action='/content/signin' method='post'>
+  <div class='form-group'>
+    <input type='text' id='email' name='email' class='form-control' placeholder='Email Address' > </input>
+  </div>
+  <div class='form-group'>
+    <input type='password' id='password' name='password' class='form-control' placeholder='Password'> </input>
+  </div>
+  <input type='hidden' name='_csrf' value='{{ csrfToken }}'>
+  <div class='button-container' >
+    <button type='submit' class='btn btn-primary'>Enter the Vault</button>
+  </div>
+    </form>
+</div></div></div></center>
+
+</div>

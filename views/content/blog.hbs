@@ -1,24 +1,102 @@
-<div id="wsite-content" class="wsite-elements wsite-not-footer">
+<div id="cloud">
+<img src="../images/cloudfore.png" alt="Blogging....">
+</div>
+
+<div id="header-wrap">
+  <table id="header">
+    <tr>
+      <td id="logo">
+        <span class="m1-0-logo">
+          <a href="/">
+            <span id="m1-0-title">MIDAS</span>
+          </a>
+        </span>
+      </td>
+
+      <td class="nav">
+        <ul class="m1-0-menu-default">
+          <li class="m1-0-menu-item-wrap" >
+            <a href="/intro" class="m1-0-menu-item" >Intro</a>
+          </li>
+          {{#if login }}
+            {{#if admin}}
+              <li class="m1-0-menu-item-wrap" >
+                <a href="/admin/admin" class="m1-0-menu-item" >Admin</a>
+              </li>
+            {{/if}}
+            <li class="m1-0-menu-item-wrap" >
+              <a href="/user/account" class="m1-0-menu-item" >Account</a>
+            </li>
+            <li class="m1-0-menu-item-wrap" >
+              <a href="/user/logout" class="m1-0-menu-item" >Logout</a>
+            </li>
+          {{else}}
+            <li class="m1-0-menu-item-wrap" >
+              <a href="/user/signup" class="m1-0-menu-item" >Sign up</a>
+            </li>
+            <li class="m1-0-menu-item-wrap" >
+              <a href="/user/entervault" class="m1-0-menu-item" >Vault</a>
+            </li>
+          {{/if}}
+          <li id="active" class="m1-0-menu-item-wrap" >
+            <a href="/blog" class="m1-0-menu-item" >Blog</a>
+          </li>
+          <li class="m1-0-menu-item-wrap" >
+            <a href="/contact/message" class="m1-0-menu-item" >Contact</a>
+          </li>
+        </ul>
+      </td>
+
+      <td class="search">${{goldData}}/oz</td>
+    </tr>
+  </table>
+</div><!-- end header-wrap -->
+
+<div class='m-nav' id='m-nav' >
+  <div class='m-nav-positioning'>
+    <a href="/intro" class="m-nav-button" >Intro</a>
+    {{# if login }}
+      {{#if admin}}
+        <a class='m-nav-button' href='/admin/overview' >Overview (admin)</a>
+      {{/if}}
+      <a class='m-nav-button' href='/user/account' >Account</a>
+      <a class='m-nav-button' href='/user/logout' >Logout</a>
+    {{ else }}
+      <a class='m-nav-button' href='/user/entervault' >Enter Vault</a>
+      <a class='m-nav-button' href='/user/signup' >Sign Up</a>
+    {{/if}}
+    <a href="/blog" class="m-nav-button" >Blog</a>
+    <a href="/contact" class="m-nav-button" >Contact</a>
+  </div>
+</div>
+
+
+
+
+
+    <div id='main-wrap'>
+      <div class='container'>
+<div id="m1-0-content" class="m1-0-elements m1-0-not-footer">
   <div>
     <div id="978272001461857683" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><div id="body"></div>
 
     </div>
 
-    <div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
-    <table class="wsite-multicol-table">
-    <tbody class="wsite-multicol-tbody">
-    <tr class="wsite-multicol-tr">
-    <td class="wsite-multicol-col" style="width:25.756866671148%; padding:0 15px;">
+    <div><div class="m1-0-multicol"><div class="m1-0-multicol-table-wrap" style="margin:0 -15px;">
+    <table class="m1-0-multicol-table">
+    <tbody class="m1-0-multicol-tbody">
+    <tr class="m1-0-multicol-tr">
+    <td class="m1-0-multicol-col" style="width:30%; padding:0 15px;">
 
-    <div class="wsite-spacer" style="height:50px;"></div>
+    <div class="m1-0-spacer" style="height:50px;"></div>
 
-    </td>       <td class="wsite-multicol-col" style="width:48.483513733926%; padding:0 15px;">
-
-
+    </td>       <td class="m1-0-multicol-col" style="width:35%; padding:0 15px;">
 
 
 
-<h2 class="wsite-content-title" style="text-align:center;"><br><br><font color="#cccccc">Silver and Gold...<br> Happy Christmas!</font><br></h2>
+
+
+<h2 class="m1-0-content-title" style="text-align:center;"><br><br><font color="#cccccc">Silver and Gold...<br> Happy Christmas!</font><br></h2>
 
 <div class="paragraph" style="text-align:left;"><font color="#2a2a2a">  
 
@@ -32,7 +110,7 @@ I'd like to express to our customers how grateful I am to you for helping us thi
 
 
 
-<h2 class="wsite-content-title" style="text-align:center;"><br><br><font color="#cccccc">A Golden Sunrise</font><br></h2>
+<h2 class="m1-0-content-title" style="text-align:center;"><br><br><font color="#cccccc">A Golden Sunrise</font><br></h2>
 
 <div class="paragraph" style="text-align:left;"><font color="#2a2a2a">  <center><img src="../images/golden-sunrise.jpg" alt="Picture"></center><br><br>
 
@@ -63,7 +141,7 @@ The rest of the world may have fiat money systems.  The rest of the world may ha
 You don't have to. <br><br>
 
 
-    <h2 class="wsite-content-title" style="text-align:center;"><br><br><font color="#cccccc">There is Gold Within Us All</font><br></h2>
+    <h2 class="m1-0-content-title" style="text-align:center;"><br><br><font color="#cccccc">There is Gold Within Us All</font><br></h2>
 
     <div class="paragraph" style="text-align:left;"><font color="#2a2a2a"><b>"Gold."</b>&nbsp; The word itself seems to be deeply emotional to all of us.&nbsp; It makes us feel lifted, to aspire higher.&nbsp; It symbolizes the very pinnacle of performance.&nbsp; It embodies a permanence of acheivement: calm, steadfast, and sure of itself.&nbsp; Its purity, its luster, its gleam, is recognized throughout the world. <br><br>
 
@@ -72,13 +150,13 @@ You don't have to. <br><br>
     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/SKMICJB3dI0" frameborder="0" allowfullscreen=""></iframe></center>
     <br><br>
 
-    <h2 class="wsite-content-title" style="text-align:center;"><br><br><font color="#cccccc">Opening Post</font><br></h2>
+    <h2 class="m1-0-content-title" style="text-align:center;"><br><br><font color="#cccccc">Opening Post</font><br></h2>
 
-    <div class="paragraph" style="text-align:left;"><font color="#2a2a2a">Welcome, one and all, to the Midas web site!&nbsp; I hope you enjoy your stay.<br><br>We are working to build you the very best way to manage all your finances.&nbsp; You need a financial hub, a simple place to go where you can take care of everything that has to do with your money.&nbsp; You need a place that makes money simple and intuitive, not a hassle.&nbsp; You need a place that will put you first, and give you service that will put a smile on your face.<br><br>Midas is that place.<br><br>To build something great, you need to start with a solid foundation.&nbsp; And so for our foundation, we have chosen the most solid, most reliable money we know of: gold.&nbsp; Why would we build the super-structure of world-class services we have planned on the flimsy promises of paper currency?&nbsp; And why should <em>you </em>have to be continually vulnerable to the danger of inflation eating away at your savings?&nbsp; Why, in short, should you settle for anything less than the best?<br><br>I don't think you should.&nbsp; And at Midas, you won't have to.<br><br>We are starting fairly basic, but as we grow we will add new and exciting features.&nbsp; Come grow along with us.&nbsp; I think you will enjoy the ride.<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></font><br><span style=""></span>  </div>
+    <div class="paragraph" style="text-align:left;"><font color="#2a2a2a">Welcome, one and all, to the Midas web site!&nbsp; I hope you enjoy your stay.<br><br>We are working to build you the very best way to manage all your finances.&nbsp; You need a financial hub, a simple place to go where you can take care of everything that has to do with your money.&nbsp; You need a place that makes money simple and intuitive, not a hassle.&nbsp; You need a place that will put you first, and give you service that will put a smile on your face.<br><br>Midas is that place.<br><br>To build something great, you need to start with a solid foundation.&nbsp; And so for our foundation, we have chosen the most solid, most reliable money we know of: gold.&nbsp; Why would we build the super-structure of world-class services we have planned on the flimsy promises of paper currency?&nbsp; And why should <em>you </em>have to be continually vulnerable to the danger of inflation eating away at your savings?&nbsp; Why, in short, should you settle for anything less than the best?<br><br>I don't think you should.&nbsp; And at Midas, you won't have to.<br><br>We are starting fairly basic, but as we grow we will add new and exciting features.&nbsp; Come grow along with us.&nbsp; I think you will enjoy the ride.<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></font><br><span style=""></span>  </div>
 
-    </font></div></font></div></font></div></td>        <td class="wsite-multicol-col" style="width:25.759619594926%; padding:0 15px;">
+    </font></div></font></div></font></div></td>        <td class="m1-0-multicol-col" style="width:25.759619594926%; padding:0 15px;">
 
-    <div class="wsite-spacer" style="height:50px;"></div>
+    <div class="m1-0-spacer" style="height:50px;"></div>
 
     </td>     </tr>
     </tbody>

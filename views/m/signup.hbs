@@ -1,0 +1,103 @@
+<div id="header-wrap">
+  <table id="header">
+    <tr>
+      <td id="logo">
+        <span class="wsite-logo">
+          <a href="/">
+            <span id="wsite-title">MIDAS</span>
+          </a>
+        </span>
+      </td>
+
+      <td class="nav">
+        <ul class="wsite-menu-default">
+          <li class="wsite-menu-item-wrap" >
+            <a href="/intro" class="wsite-menu-item" >Intro</a>
+          </li>
+          {{#if login }}
+            {{#if admin}}
+              <li class="wsite-menu-item-wrap" >
+                <a href="/admin/admin" class="wsite-menu-item" >Admin</a>
+              </li>
+            {{/if}}
+            <li class="wsite-menu-item-wrap" >
+              <a href="/user/account" class="wsite-menu-item" >Account</a>
+            </li>
+            <li class="wsite-menu-item-wrap" >
+              <a href="/user/logout" class="wsite-menu-item" >Logout</a>
+            </li>
+          {{else}}
+            <li id="active" class="wsite-menu-item-wrap" >
+              <a href="/user/signup" class="wsite-menu-item" >Sign up</a>
+            </li>
+            <li class="wsite-menu-item-wrap" >
+              <a href="/user/entervault" class="wsite-menu-item" >Enter Vault</a>
+            </li>
+          {{/if}}
+          <li class="wsite-menu-item-wrap" >
+            <a href="/blog" class="wsite-menu-item" >Blog</a>
+          </li>
+          <li class="wsite-menu-item-wrap" >
+            <a href="/contact/message" class="wsite-menu-item" >Contact</a>
+          </li>
+        </ul>
+      </td>
+
+      <!--mobile nav bars -->
+      <td>
+        <button class='m-nav-bars' id='m-nav-bars'>
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+      </td>
+
+      <td class="search">${{goldData}}/oz</td>
+    </tr>
+  </table>
+</div><!-- end header-wrap -->
+
+<div class='m-nav' id='m-nav' >
+  <div class='m-nav-positioning'>
+    <a href="/intro" class="m-nav-button" >Intro</a>
+    {{# if login }}
+      {{#if admin}}
+        <a class='m-nav-button' href='/admin/overview' >Overview (admin)</a>
+      {{/if}}
+      <a class='m-nav-button' href='/user/account' >Account</a>
+      <a class='m-nav-button' href='/user/logout' >Logout</a>
+    {{ else }}
+      <a class='m-nav-button' href='/user/entervault' >Enter Vault</a>
+      <a class='m-nav-button' href='/user/signup' >Sign Up</a>
+    {{/if}}
+    <a href="/blog" class="m-nav-button" >Blog</a>
+    <a href="/contact" class="m-nav-button" >Contact</a>
+  </div>
+</div>
+
+
+
+
+    <div id='main-wrap'>
+      <div class='container'>
+<h1 class='single-header cart-header' >{{title}}</h1>
+<form class='user-form' action='/content/signup' method='post'>
+  {{#if hasErrors}}
+    <div class='alert alert-danger'>
+      {{# each messages }}
+        <p>{{this}}</p>
+      {{/each}}
+    </div>
+  {{/if}}
+  <div class='form-group'>
+    <input type='text' id='email' name='email' class='form-control' placeholder='email*' > </input>
+  </div>
+  <div class='form-group'>
+    <input type='password' id='password' name='password' class='form-control' placeholder='password*' > </input>
+  </div>
+  <div class='form-group'>
+    <input type='password' id='confirm-password' name='confirm-password' class='form-control' placeholder='confirm password*' > </input>
+  </div>
+  <input type='hidden' name='_csrf' value='{{ csrfToken }}'>
+  <div class='button-container' >
+    <button type='submit' class='btn-primary'>Sign Up</button>
+  </div>
+</form>

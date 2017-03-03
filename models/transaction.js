@@ -5,6 +5,7 @@ var bcrypt = require('bcrypt-nodejs');
 var transactionSchema = new Schema({
   _account: {type: String},
   _id: {type: String},
+  number: {type: String},
   amount: {type: String},
   amountInOunces: {type: String},
   balanceAfterTransaction: {type: String},

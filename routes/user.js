@@ -60,6 +60,7 @@ router.get('/account', isLoggedIn, function(req, res) {
       transactionsFromPlaid = response.transactions;
       accountsFromPlaid = [response.accounts[0]];
 
+
       matchAndUpdateTransactions(res, req, transactionsFromPlaid, accountsFromPlaid)
         .then(function(response) {
           return getTransactions(req, transactionsFromPlaid);
@@ -198,23 +199,25 @@ function notLoggedIn(req, res, next) {
   }
 }
 
-function transactionUpdate(j, transactionsFromPlaid) {
+function transactionUpdate(j, transactionsFromPlaid, accountsFromPlaid) {
   var transactions = transactionsFromPlaid;
+  var accounts = accountsFromPlaid;
   Transaction.update({'_id': transactions[j]._id}, 
     {
       $set: {
         _account: transactions[j]._account,
-        _id: transactions[j]._id,
-        amount: transactions[j].amount,
+        _id: transactions[j]._id || "Unknown",
+        number: transactions[j].meta.number || "Unknown",
+        amount: transactions[j].amount || "Unknown",
         amountInOunces: transactions[j].amountInOunces || "Unknown",
-        date: transactions[j].date,
-        name: transactions[j].name,
-        meta: transactions[j].meta,
-        pending: transactions[j].pending,
-        type: transactions[j].type,
-        category: transactions[j].category,
-        category_id: transactions[j].category_id,
-        score: transactions[j].score
+        date: transactions[j].date || "Unknown",
+        name: transactions[j].name || "Unknown",
+        meta: transactions[j].meta || "Unknown",
+        pending: transactions[j].pending || "Unknown",
+        type: transactions[j].type || "Unknown",
+        category: transactions[j].category || "Unknown",
+        category_id: transactions[j].category_id || "Unknown",
+        score: transactions[j].score || "Unknown"
       }
     }, {
       upsert: true
@@ -307,7 +310,7 @@ function matchAndUpdateTransactions(res, req, transactionsFromPlaid, accountsFro
         //find a matching date in gold database
         GoldPrice.find({'actualDate': date}, function (err, gold) {
           if (gold.length == 0) {
-            transactionUpdate(i, transactionsFromPlaid);
+            transactionUpdate(i, transactionsFromPlaid, accountsFromPlaid);
             if (i < (transactionsFromPlaid.length - 1)) {
               i++;
               findDate(i);
@@ -317,7 +320,7 @@ function matchAndUpdateTransactions(res, req, transactionsFromPlaid, accountsFro
           } else {
             var ounces = ( transactionsFromPlaid[i].amount / gold[0].goldPrice );
             transactionsFromPlaid[i].amountInOunces = roundNthDigUp(ounces, 1000000);
-            transactionUpdate(i, transactionsFromPlaid);
+            transactionUpdate(i, transactionsFromPlaid, accountsFromPlaid);
             if (i < (transactionsFromPlaid.length - 1)) {
               i++;
               findDate(i);
