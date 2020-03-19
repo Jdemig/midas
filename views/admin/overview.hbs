@@ -11,37 +11,37 @@
 
       <td class="nav">
         <ul class="wsite-menu-default">
-          <li class="wsite-menu-item-wrap" >
-            <a href="/intro" class="wsite-menu-item" >Intro</a>
+          <li class="wsite-menu-item-wrap">
+            <a href="/intro" class="wsite-menu-item">Intro</a>
           </li>
           {{#if login }}
-            {{#if admin}}
-              <li class="wsite-menu-item-wrap" >
-                <a href="/admin/admin" class="wsite-menu-item" >Admin</a>
-              </li>
-              <li class="wsite-menu-item-wrap" >
-                <a href="/admin/overview" class="wsite-menu-item" >Overview</a>
-              </li>
-            {{/if}}
-            <li class="wsite-menu-item-wrap" >
-              <a href="/user/account" class="wsite-menu-item" >Account</a>
-            </li>
-            <li class="wsite-menu-item-wrap" >
-              <a href="/user/logout" class="wsite-menu-item" >Logout</a>
-            </li>
-          {{else}}
-            <li class="wsite-menu-item-wrap" >
-              <a href="/user/signup" class="wsite-menu-item" >Sign up</a>
-            </li>
-            <li class="wsite-menu-item-wrap" >
-              <a href="/user/entervault" class="wsite-menu-item" >Enter Vault</a>
-            </li>
-          {{/if}}
-          <li class="wsite-menu-item-wrap" >
-            <a href="/blog" class="wsite-menu-item" >Blog</a>
+          {{#if admin}}
+          <li class="wsite-menu-item-wrap">
+            <a href="/admin/admin" class="wsite-menu-item">Admin</a>
           </li>
-          <li class="wsite-menu-item-wrap" >
-            <a href="/contact/message" class="wsite-menu-item" >Contact</a>
+          <li class="wsite-menu-item-wrap">
+            <a href="/admin/overview" class="wsite-menu-item">Overview</a>
+          </li>
+          {{/if}}
+          <li class="wsite-menu-item-wrap">
+            <a href="/user/account" class="wsite-menu-item">Account</a>
+          </li>
+          <li class="wsite-menu-item-wrap">
+            <a href="/user/logout" class="wsite-menu-item">Logout</a>
+          </li>
+          {{else}}
+          <li class="wsite-menu-item-wrap">
+            <a href="/user/signup" class="wsite-menu-item">Sign up</a>
+          </li>
+          <li class="wsite-menu-item-wrap">
+            <a href="/user/entervault" class="wsite-menu-item">Enter Vault</a>
+          </li>
+          {{/if}}
+          <li class="wsite-menu-item-wrap">
+            <a href="/blog" class="wsite-menu-item">Blog</a>
+          </li>
+          <li class="wsite-menu-item-wrap">
+            <a href="/contact/message" class="wsite-menu-item">Contact</a>
           </li>
         </ul>
       </td>
@@ -58,21 +58,21 @@
   </table>
 </div><!-- end header-wrap -->
 
-<div class='m-nav' id='m-nav' >
+<div class='m-nav' id='m-nav'>
   <div class='m-nav-positioning'>
-    <a href="/intro" class="m-nav-button" >Intro</a>
+    <a href="/intro" class="m-nav-button">Intro</a>
     {{# if login }}
-      {{#if admin}}
-        <a class='m-nav-button' href='/admin/overview' >Overview (admin)</a>
-      {{/if}}
-      <a class='m-nav-button' href='/user/account' >Account</a>
-      <a class='m-nav-button' href='/user/logout' >Logout</a>
-    {{ else }}
-      <a class='m-nav-button' href='/user/entervault' >Enter Vault</a>
-      <a class='m-nav-button' href='/user/signup' >Sign Up</a>
+    {{#if admin}}
+    <a class='m-nav-button' href='/admin/overview'>Overview (admin)</a>
     {{/if}}
-    <a href="/blog" class="m-nav-button" >Blog</a>
-    <a href="/contact" class="m-nav-button" >Contact</a>
+    <a class='m-nav-button' href='/user/account'>Account</a>
+    <a class='m-nav-button' href='/user/logout'>Logout</a>
+    {{ else }}
+    <a class='m-nav-button' href='/user/entervault'>Enter Vault</a>
+    <a class='m-nav-button' href='/user/signup'>Sign Up</a>
+    {{/if}}
+    <a href="/blog" class="m-nav-button">Blog</a>
+    <a href="/contact" class="m-nav-button">Contact</a>
   </div>
 </div>
 
@@ -80,24 +80,24 @@
 
 
 
-    <div id='main-wrap'>
-      <div class='container'>
-<h1 class='single-header cart-header' >{{title}}</h1>
-{{#each accounts}}
-	<p><strong>Name: </strong>{{this.meta.name}}</p>
-	<p><strong>Type: </strong>{{this.type}}</p>
-	<p><strong>Available Balance: </strong>${{this.balance.available}}</p>
-	<p><strong>Current Balance: </strong>${{this.balance.current}}</p>
-{{/each}}
-<h1 class='single-header cart-header' >Transactions</h2>
-{{#each transactions}}
-	<h3 class='account-purchase' >Purchase</h3>
-	<p><strong>Amount: </strong>${{this.amount}}</p>
-	<p><strong>Name: </strong>{{this.name}}</p>
-	<p><strong>Date: </strong>{{this.date}}</p>
-	<p><strong>Category: </strong>{{#each this.category}}{{this}}, {{/each}}</p>
-	<p><strong>Address: </strong>{{this.meta.location.address}}</p>
-	<p><strong>City: </strong>{{this.meta.location.city}}</p>
-	<p><strong>State: </strong>{{this.meta.location.state}}</p>
-	<p><strong>Zip: </strong>{{this.meta.location.zip}}</p>
-{{/each}}
+<div id='main-wrap'>
+  <div class='container'>
+    <h1 class='single-header cart-header'>{{title}}</h1>
+    {{#each accounts}}
+    <p><strong>Name: </strong>{{this.meta.name}}</p>
+    <p><strong>Type: </strong>{{this.type}}</p>
+    <p><strong>Available Balance: </strong>${{this.balance.available}}</p>
+    <p><strong>Current Balance: </strong>${{this.balance.current}}</p>
+    {{/each}}
+    <h1 class='single-header cart-header'>Transactions</h2>
+      {{#each transactions}}
+      <h3 class='account-purchase'>Purchase</h3>
+      <p><strong>Amount: </strong>${{this.amount}}</p>
+      <p><strong>Name: </strong>{{this.name}}</p>
+      <p><strong>Date: </strong>{{this.date}}</p>
+      <p><strong>Category: </strong>{{#each this.category}}{{this}}, {{/each}}</p>
+      <p><strong>Address: </strong>{{this.meta.location.address}}</p>
+      <p><strong>City: </strong>{{this.meta.location.city}}</p>
+      <p><strong>State: </strong>{{this.meta.location.state}}</p>
+      <p><strong>Zip: </strong>{{this.meta.location.zip}}</p>
+      {{/each}}

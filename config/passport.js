@@ -2,12 +2,12 @@ var passport = require('passport');
 var User = require('../models/user');
 var LocalStrategy = require('passport-local').Strategy;
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
 
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
+passport.deserializeUser(function (id, done) {
+  User.findById(id, function (err, user) {
     done(err, user);
   });
 });
@@ -16,39 +16,36 @@ passport.use('local.signup', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
   passReqToCallback: true
-}, function(req, email, password, done) {
+}, function (req, email, password, done) {
 
   email = email.toLowerCase();
 
   req.checkBody('email', 'Invalid email').notEmpty().isEmail();
   req.checkBody('password', 'Password cannot be empty').notEmpty();
-  req.checkBody('password', 'Password must be at least 7 characters long').isLength({min:7});
+  req.checkBody('password', 'Password must be at least 7 characters long').isLength({ min: 7 });
   req.checkBody('confirm-password', 'Please fill in all fields').notEmpty();
   req.assert('confirm-password', 'Passwords do not match').equals(req.body.password);
-  
+
   var errors = req.validationErrors();
   if (errors) {
     var messages = [];
-    errors.forEach(function(error) {
+    errors.forEach(function (error) {
       messages.push(error.msg);
     });
     return done(null, false, req.flash('error', messages));
   }
-  User.findOne({'email': email}, function(err, user) {
+  User.findOne({ 'email': email }, function (err, user) {
     if (err) {
       return done(err);
     }
     if (user) {
-      return done(null, false, {message: 'Email is already in use.'});
+      return done(null, false, { message: 'Email is already in use.' });
     }
     var newUser = new User();
     newUser.email = email;
     newUser.password = newUser.encryptPassword(password);
-    newUser.accessToken = '';
     newUser.balanceInOunces = 0;
-    newUser.conversionSelector = 1;
-    newUser.transactionsIds = [];
-    newUser.save(function(err, result) {
+    newUser.save(function (err, result) {
       if (err) {
         return done(err);
       }
@@ -61,7 +58,7 @@ passport.use('local.signin', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
   passReqToCallback: true
-}, function(req, email, password, done) {
+}, function (req, email, password, done) {
 
   email = email.toLowerCase();
 
@@ -70,20 +67,20 @@ passport.use('local.signin', new LocalStrategy({
   var errors = req.validationErrors();
   if (errors) {
     var messages = [];
-    errors.forEach(function(error) {
+    errors.forEach(function (error) {
       messages.push(error.msg);
     });
     return done(null, false, req.flash('error', messages));
   }
-  User.findOne({'email': email}, function(err, user) {
+  User.findOne({ 'email': email }, function (err, user) {
     if (err) {
       return done(err);
     }
     if (!user) {
-      return done(null, false, {message: 'No user found.'});
+      return done(null, false, { message: 'No user found.' });
     }
     if (!user.validPassword(password)) {
-      return done(null, false, {message: 'Wrong password.'});
+      return done(null, false, { message: 'Wrong password.' });
     }
     return done(null, user);
   });

@@ -4,22 +4,21 @@ var express = require('express');
 var router = express.Router();
 var csrf = require('csurf');
 var passport = require('passport');
-var plaid = require('plaid');
+var Account = require('../models/account');
 var User = require('../models/user');
 var GoldPrice = require('../models/goldPrice');
 var Transaction = require('../models/transaction');
-var app = require('../app');
 var Promise = require('bluebird');
 
-var plaidClient = new plaid.Client('57b8c32566710877408d0926', '3517a0ad2d25dd28df2b88be6c492e', plaid.environments.tartan);
+// var plaidClient = new plaid.Client('57b8c32566710877408d0926', '3517a0ad2d25dd28df2b88be6c492e', plaid.environments.tartan);
 
 var csrfProtection = csrf();
 router.use(csrfProtection);
 
-router.use(function(req, res, next) {
-  res.locals.admin = function() {
+router.use(function (req, res, next) {
+  res.locals.admin = function () {
     var admin = false;
-    switch(req.user.email) {
+    switch (req.user.email) {
       case 'jonathan.emig@gmail.com':
         admin = true;
         break;
@@ -34,155 +33,166 @@ router.use(function(req, res, next) {
   next();
 });
 
-router.get('/logout', isLoggedIn, function(req, res, next) {
+router.get('/logout', isLoggedIn, function (req, res, next) {
   req.logout();
   res.redirect('/');
 });
 
-router.get('/account', isLoggedIn, function(req, res) {
+router.get('/account', isLoggedIn, function (req, res) {
   var accountsFromPlaid,
-      transactionsFromPlaid,
-      transactions,
-      balanceInOunces,
-      transactionIds,
-      units,
-      multiplier;
+    transactionsFromPlaid,
+    transactions,
+    balanceInOunces,
+    units,
+    multiplier;
 
   var unitObj = {};
 
   var userId = req.user._id;
 
-  plaidClient.getConnectUser(req.user.accessToken, {}, function(err, response) {
-    if (response) {
+  User.findOne({ '_id': userId }, function (err, user) {
+    Account.findOne({ '_userId': userId }, function (err, account) {
+      console.log(account);
 
-      console.log('rendered from plaid');
+      Transaction.find({ '_accountId': account._id }, function (err, transactions) {
 
-      transactionsFromPlaid = response.transactions;
-      accountsFromPlaid = [response.accounts[0]];
+        var accounts = [account];
+        console.log(accounts);
+        console.log(transactions);
 
+        req.user.transactions = transactions;
 
-      matchAndUpdateTransactions(res, req, transactionsFromPlaid, accountsFromPlaid)
-        .then(function(response) {
-          return getTransactions(req, transactionsFromPlaid);
-        })
-        .then(function(response) {
-          req.user.transactions = response;
-          console.log(req.user);
-          console.log('hello1');
-          multiplier = getMultiplier(req);
-          console.log('hello2');
-          return updateBalance(req);
-        })
-        .then(function(response) {
-          balanceInOunces = response;
-          console.log('hello3');
-          return transactionMultiplier(req, multiplier);
-        })
-        .then(function(response) {
-          transactions = response;
-          console.log('hello4');
-          return getUnits(userId);
-        })
-        .then(function(response) {
+        res.render('user/account', {
+          title: 'User Account',
+          accounts: accounts,
+          transactions: transactions,
+          isAdmin: res.locals.admin(),
+        });
+
+        /*
+        getUnits(userId).then(function (response) {
           units = response;
-          switch(units) {
-            case "ounces":
-              unitObj.ounces = "selected";
-              break;
-            case "milliounces":
-              unitObj.milliounces = "selected";
-              break;
-            case "grams":
-              unitObj.grams = "selected";
-              break;
-            default:
-              break;
-          }
-          console.log('hello5');
-
-          return sortTransactions(transactions);
-        })
-        .then(function(response) {
+          units = "ounces";
+          return getMultiplier(user);
+        }).then(function (response) {
+          multiplier = response;
+          multiplier = 1000;
+          return transactionMultiplier(req, multiplier);
+        }).then(function (response) {
           transactions = response;
-
-          res.render('user/account', {title: 'User Account', csrfToken: req.csrfToken(),
-            accounts: accountsFromPlaid,
+          console.log(accounts);
+          console.log(response);
+          balanceInOunces = roundNthDigUp(balanceInOunces, 1000000);
+          res.render('user/account', {
+            title: 'User Account',
+            accounts: accounts,
             transactions: transactions,
             balanceInOunces: fixPrecision(balanceInOunces * multiplier),
             units: units,
-            unitObj: unitObj,
             isAdmin: res.locals.admin()
           });
+        });
+        */
 
-        }); //updates database
-
-
-    } else {
-
-      console.log('rendered from database');
-
-      User.findOne({'_id': userId}, function (err, user) {
-        if (typeof user.userAccount[0] == "undefined") {
-          res.render('user/account', {title: 'User Account'});
-        } else {
-          Transaction.find({'_account': user.userAccount[0]._id}, function(err, transactions) {
-
-            var balanceInOunces = user.balanceInOunces;
-            var accounts = user.userAccount;
-            var transactions = transactions;
-
-            getUnits(userId).then(function(response) {
-              units = response;
-              return getMultiplier(userId);
-            }).then(function(response) {
-              multiplier = response;
-              return transactionMultiplier(req, multiplier);
-            }).then(function(response) {
-              transactions = response;
-              balanceInOunces = roundNthDigUp(balanceInOunces, 1000000);
-              res.render('user/account', {title: 'User Account',
-                accounts: accounts,
-                transactions: transactions,
-                balanceInOunces: fixPrecision(balanceInOunces * multiplier),
-                units: units,
-                isAdmin: res.locals.admin()
-              });
-            });
-
-          });
-        }
       });
-    }
+    });
+
   });
+
+
+  /*
+    plaidClient.getConnectUser(req.user.accessToken, {}, function(err, response) {
+      console.log(response);
+      console.log(err);
+      if (response) {
+  
+        console.log('rendered from plaid');
+  
+        transactionsFromPlaid = response.transactions;
+        accountsFromPlaid = [response.accounts[0]];
+  
+  
+        matchAndUpdateTransactions(res, req, transactionsFromPlaid, accountsFromPlaid)
+          .then(function(response) {
+            return getTransactions(req, transactionsFromPlaid);
+          })
+          .then(function(response) {
+            req.user.transactions = response;
+            multiplier = getMultiplier(req.user);
+            return updateBalance(req);
+          })
+          .then(function(response) {
+            balanceInOunces = response;
+            return transactionMultiplier(req, multiplier);
+          })
+          .then(function(response) {
+            transactions = response;
+            return getUnits(userId);
+          })
+          .then(function(response) {
+            units = response;
+            switch(units) {
+              case "ounces":
+                unitObj.ounces = "selected";
+                break;
+              case "milliounces":
+                unitObj.milliounces = "selected";
+                break;
+              case "grams":
+                unitObj.grams = "selected";
+                break;
+              default:
+                break;
+            }
+  
+            return sortTransactions(transactions);
+          })
+          .then(function(response) {
+            transactions = response;
+  
+            res.render('user/account', {title: 'User Account', csrfToken: req.csrfToken(),
+              accounts: accountsFromPlaid,
+              transactions: transactions,
+              balanceInOunces: fixPrecision(balanceInOunces * multiplier),
+              units: units,
+              unitObj: unitObj,
+              isAdmin: res.locals.admin()
+            });
+  
+          }); //updates database
+      } else {
+  
+        console.log('rendered from database');
+  
+      }
+    });
+    */
 });
 
-router.use('/', notLoggedIn, function(req, res, next) {
-  next();
-});
 
-router.get('/entervault', function(req, res, next) {
+router.get('/entervault', notLoggedIn, function (req, res) {
   var messages = req.flash('error');
-  res.render('user/entervault', {title: 'Vault', csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
+  res.render('user/entervault', { title: 'Vault', csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0 });
 });
-router.post('/entervault', passport.authenticate('local.signin', {
+router.post('/entervault', notLoggedIn, passport.authenticate('local.signin', {
   successRedirect: '/user/account',
   failureRedirect: '/user/entervault',
-  failureFlash: true
+  failureFlash: true,
 }));
 
-router.get('/signup', function(req, res) {
+router.get('/signup', notLoggedIn, function (req, res) {
   var messages = req.flash('error');
-  res.render('user/signup', {title: 'Sign Up', csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
+  res.render('user/signup', { title: 'Sign Up', csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0 });
 });
-router.post('/signup', passport.authenticate('local.signup', {
+router.post('/signup', notLoggedIn, passport.authenticate('local.signup', {
   successRedirect: '/user/account',
   failureRedirect: '/user/signup',
-  failureFlash: true
+  failureFlash: true,
 }));
 
 module.exports = router;
 
-//check if logged in middleware
+// check if logged in middleware
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
@@ -202,14 +212,14 @@ function notLoggedIn(req, res, next) {
 function transactionUpdate(j, transactionsFromPlaid, accountsFromPlaid) {
   var transactions = transactionsFromPlaid;
   var accounts = accountsFromPlaid;
-  Transaction.update({'_id': transactions[j]._id}, 
+  Transaction.update({ '_id': transactions[j]._id },
     {
       $set: {
         _account: transactions[j]._account,
         _id: transactions[j]._id || "Unknown",
         number: transactions[j].meta.number || "Unknown",
-        amount: transactions[j].amount || "Unknown",
-        amountInOunces: transactions[j].amountInOunces || "Unknown",
+        amountUsd: transactions[j].amountUsd || "Unknown",
+        amountGoldOunces: transactions[j].amountGoldOunces || "Unknown",
         date: transactions[j].date || "Unknown",
         name: transactions[j].name || "Unknown",
         meta: transactions[j].meta || "Unknown",
@@ -220,50 +230,48 @@ function transactionUpdate(j, transactionsFromPlaid, accountsFromPlaid) {
         score: transactions[j].score || "Unknown"
       }
     }, {
-      upsert: true
-    }, function(err, result) {
-      if (err) {
-        console.log(err);
-      } 
+    upsert: true
+  }, function (err, result) {
+    if (err) {
+      console.log(err);
     }
+  }
   );
 }
 
 function updateBalanceAfterTransaction(req, j, resolve) {
   var transactions = req.user.transactions;
-  console.log(req.user.balanceInOunces);
-  Transaction.update({'_id': transactions[j]._id}, 
+  Transaction.update({ '_id': transactions[j]._id },
     {
       $set: {
         balanceAfterTransaction: req.user.balanceInOunces
       }
     }, {
-      upsert: true
-    }, function(err, result) {
-      if (err) {
-        console.log(err);
-      } 
-      updateUser(req, j, resolve);
+    upsert: true
+  }, function (err, result) {
+    if (err) {
+      console.log(err);
     }
+    updateUser(req, j, resolve);
+  }
   );
 }
 
 function transactionMultiplier(req, multiplier) {
-
   var transactions = req.user.transactions;
+  console.log(req.user);
 
-  return new Promise(function(resolve, reject) {
-
+  return new Promise(function (resolve, reject) {
     function nextTransaction(i) {
-      if (i < (transactions.length) ) {
-        if (transactions[i].amountInOunces != "Unknown") {
-          transactions[i].amountInOunces = fixPrecision(transactions[i].amountInOunces * multiplier);
+      if (i < (transactions.length)) {
+        if (transactions[i].amountGoldOunces != "Unknown") {
+          transactions[i].amountGoldOunces = fixPrecision(transactions[i].amountGoldOunces * multiplier);
           transactions[i].balanceAfterTransaction = fixPrecision(transactions[i].balanceAfterTransaction * multiplier);
           if (req.user.conversionSelector != 1) {
-            transactions[i].amountInOunces = trailingZeros(transactions[i].amountInOunces, 6);
+            transactions[i].amountGoldOunces = trailingZeros(transactions[i].amountGoldOunces, 6);
             transactions[i].balanceAfterTransaction = trailingZeros(transactions[i].balanceAfterTransaction, 6);
           } else {
-            transactions[i].amountInOunces = trailingZeros(transactions[i].amountInOunces, 3);
+            transactions[i].amountGoldOunces = trailingZeros(transactions[i].amountGoldOunces, 3);
             transactions[i].balanceAfterTransaction = trailingZeros(transactions[i].balanceAfterTransaction, 3);
           }
           i++;
@@ -277,38 +285,34 @@ function transactionMultiplier(req, multiplier) {
       }
     }
     nextTransaction(0);
-
   });
-
 }
 
 function matchAndUpdateTransactions(res, req, transactionsFromPlaid, accountsFromPlaid) {
-
-  return new Promise(function(resolve, reject) {
-
-    User.update({'_id': req.user._id},
+  return new Promise(function (resolve, reject) {
+    User.update({ '_id': req.user._id },
       {
         $set: {
           userAccount: accountsFromPlaid
         }
-      }, function(err, result) {
+      }, function (err, result) {
         findDate(0);
       }
     );
 
     function findDate(i) {
       var date = transactionsFromPlaid[i].date;
-      //runs through all transaction dates to find a matching date in the GoldPrice collection
-      //if there is a match it will calculate the amountInOunces
-      User.findOne({'_id': req.user._id}, function (err, user) {
+      // runs through all transaction dates to find a matching date in the GoldPrice collection
+      // if there is a match it will calculate the amountGoldOunces
+      User.findOne({ '_id': req.user._id }, function (err, user) {
 
-        //ensure there are two decimal places on amount
+        // ensure there are two decimal places on amount
         if (decimalPlaces(transactionsFromPlaid[i].amount) == 1) {
           transactionsFromPlaid[i].amount = transactionsFromPlaid[i].amount + "0";
         }
 
-        //find a matching date in gold database
-        GoldPrice.find({'actualDate': date}, function (err, gold) {
+        // find a matching date in gold database
+        GoldPrice.find({ 'actualDate': date }, function (err, gold) {
           if (gold.length == 0) {
             transactionUpdate(i, transactionsFromPlaid, accountsFromPlaid);
             if (i < (transactionsFromPlaid.length - 1)) {
@@ -318,8 +322,8 @@ function matchAndUpdateTransactions(res, req, transactionsFromPlaid, accountsFro
               resolve();
             }
           } else {
-            var ounces = ( transactionsFromPlaid[i].amount / gold[0].goldPrice );
-            transactionsFromPlaid[i].amountInOunces = roundNthDigUp(ounces, 1000000);
+            var ounces = (transactionsFromPlaid[i].amount / gold[0].goldPrice);
+            transactionsFromPlaid[i].amountGoldOunces = roundNthDigUp(ounces, 1000000);
             transactionUpdate(i, transactionsFromPlaid, accountsFromPlaid);
             if (i < (transactionsFromPlaid.length - 1)) {
               i++;
@@ -335,7 +339,7 @@ function matchAndUpdateTransactions(res, req, transactionsFromPlaid, accountsFro
 }
 
 function updateBalance(req) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     goThroughTransactions(req, 0, resolve);
   });
 }
@@ -351,8 +355,8 @@ function goThroughTransactions(req, i, resolve) {
     }
   }
   if (match == false) {
-    if (req.user.transactions[i].amountInOunces != "Unknown") {
-      balanceInOunces = balanceInOunces - transactions[i].amountInOunces;
+    if (req.user.transactions[i].amountGoldOunces != "Unknown") {
+      balanceInOunces = balanceInOunces - transactions[i].amountGoldOunces;
       req.user.balanceInOunces = roundNthDigUp(balanceInOunces, 1000000);
       req.user.transactionIds.push(transactions[i]._id);
       updateBalanceAfterTransaction(req, i, resolve);
@@ -364,7 +368,6 @@ function goThroughTransactions(req, i, resolve) {
       i++
       goThroughTransactions(req, i, resolve);
     } else {
-      console.log(balanceInOunces);
       resolve(balanceInOunces);
     }
   }
@@ -373,13 +376,13 @@ function goThroughTransactions(req, i, resolve) {
 function updateUser(req, i, resolve) {
   var balanceInOunces = req.user.balanceInOunces;
   var transactions = req.user.transactions;
-  User.update({'_id': req.user._id},
+  User.update({ '_id': req.user._id },
     {
       $set: {
         balanceInOunces: balanceInOunces,
         transactionIds: req.user.transactionIds
       }
-    }, function(err, result) {
+    }, function (err) {
       if (err) {
         console.log(err);
       } else {
@@ -387,7 +390,6 @@ function updateUser(req, i, resolve) {
           i++
           goThroughTransactions(req, i, resolve);
         } else {
-          console.log(balanceInOunces);
           resolve(balanceInOunces);
         }
       }
@@ -423,7 +425,7 @@ function fixPrecision(num) {
 }
 
 function sortTransactions(transactions) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve) {
     function howToSort(a, b) {
       a = dateToNum(a.date);
       b = dateToNum(b.date);
@@ -434,15 +436,14 @@ function sortTransactions(transactions) {
       } else {
         return 0;
       }
-    };
+    }
     resolve(transactions.sort(howToSort));
-
   });
 }
 
-function getMultiplier(req) {
+function getMultiplier(user) {
   var multiplier;
-  switch(req.user.conversionSelector) {
+  switch (user.conversionSelector) {
     case 0:
       multiplier = 1;
       break;
@@ -459,10 +460,10 @@ function getMultiplier(req) {
 }
 
 function getUnits(userId) {
-  return new Promise(function(resolve, reject) {
-    User.findOne({'_id': userId}, function (err, user) {
+  return new Promise(function (resolve) {
+    User.findOne({ '_id': userId }, function (err, user) {
       var units;
-      switch(user.conversionSelector) {
+      switch (user.conversionSelector) {
         case 0:
           units = "ounces";
           break;
@@ -481,12 +482,12 @@ function getUnits(userId) {
 }
 
 function getTransactions(req, transactionsFromPlaid) {
-  return new Promise(function(resolve, reject) {
-    User.findOne({'_id': req.user._id}, function (err, user) {
+  return new Promise(function (resolve) {
+    User.findOne({ '_id': req.user._id }, function (err, user) {
       if (typeof user.userAccount[0] == "undefined") {
         resolve(transactionsFromPlaid);
       } else {
-        Transaction.find({'_account': user.userAccount[0]._id}, function(err, transactions) {
+        Transaction.find({ '_account': user.userAccount[0]._id }, function (err, transactions) {
           resolve(transactions);
         });
       }
@@ -496,20 +497,20 @@ function getTransactions(req, transactionsFromPlaid) {
 
 //this function returns the number of digits after the decimal place
 function decimalPlaces(num) {
-  var match = (''+num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+  var match = ('' + num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
   if (!match) { return 0; }
   return Math.max(
-       0,
-       // Number of digits right of decimal point.
-       (match[1] ? match[1].length : 0)
-       // Adjust for scientific notation.
-       - (match[2] ? +match[2] : 0));
+    0,
+    // Number of digits right of decimal point.
+    (match[1] ? match[1].length : 0)
+    // Adjust for scientific notation.
+    - (match[2] ? +match[2] : 0));
 }
 
 function dateToNum(date) {
-  var year = parseInt(date.slice(0,4));
-  var month = parseInt(date.slice(5,7));
-  var day = parseInt(date.slice(8,10));
+  var year = parseInt(date.slice(0, 4));
+  var month = parseInt(date.slice(5, 7));
+  var day = parseInt(date.slice(8, 10));
   year = (year - 1970) * 365 * 24 * 60 * 60 * 1000;
   month = parseInt((month - 1) * 30.42 * 24 * 60 * 60 * 1000);
   day = day * 24 * 60 * 60 * 1000;

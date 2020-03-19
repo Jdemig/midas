@@ -11,34 +11,34 @@
 
       <td class="nav">
         <ul class="m1-0-menu-default">
-          <li class="m1-0-menu-item-wrap" >
-            <a href="/intro" class="m1-0-menu-item" >Intro</a>
+          <li class="m1-0-menu-item-wrap">
+            <a href="/intro" class="m1-0-menu-item">Intro</a>
           </li>
-          {{#if login }}
-            {{#if admin}}
-              <li class="m1-0-menu-item-wrap" >
-                <a href="/admin/admin" class="m1-0-menu-item" >Admin</a>
-              </li>
-            {{/if}}
-            <li  id="active" class="m1-0-menu-item-wrap" >
-              <a href="/user/account" class="m1-0-menu-item" >Vault</a>
-            </li>
-            <li class="m1-0-menu-item-wrap" >
-              <a href="/user/logout" class="m1-0-menu-item" >Logout</a>
-            </li>
-          {{else}}
-            <li id="pg136241869276186126" class="m1-0-menu-item-wrap" >
-              <a href="/user/signup" class="m1-0-menu-item" >Sign up</a>
-            </li>
-            <li  id="active" class="m1-0-menu-item-wrap" >
-              <a href="/user/entervault" class="m1-0-menu-item" >Vault</a>
-            </li>
+          {{#if login}}
+          {{#if admin}}
+          <li class="m1-0-menu-item-wrap">
+            <a href="/admin/admin" class="m1-0-menu-item">Admin</a>
+          </li>
           {{/if}}
-          <li id="pg859576902690700031" class="m1-0-menu-item-wrap" >
-            <a href="/blog" class="m1-0-menu-item" >Blog</a>
+          <li id="active" class="m1-0-menu-item-wrap">
+            <a href="/user/account" class="m1-0-menu-item">Vault</a>
           </li>
-          <li id="pg336641080812431241" class="m1-0-menu-item-wrap" >
-            <a href="/contact/message" class="m1-0-menu-item" >Contact</a>
+          <li class="m1-0-menu-item-wrap">
+            <a href="/user/logout" class="m1-0-menu-item">Logout</a>
+          </li>
+          {{else}}
+          <li id="pg136241869276186126" class="m1-0-menu-item-wrap">
+            <a href="/user/signup" class="m1-0-menu-item">Sign up</a>
+          </li>
+          <li id="active" class="m1-0-menu-item-wrap">
+            <a href="/user/entervault" class="m1-0-menu-item">Vault</a>
+          </li>
+          {{/if}}
+          <li id="pg859576902690700031" class="m1-0-menu-item-wrap">
+            <a href="/blog" class="m1-0-menu-item">Blog</a>
+          </li>
+          <li id="pg336641080812431241" class="m1-0-menu-item-wrap">
+            <a href="/contact/message" class="m1-0-menu-item">Contact</a>
           </li>
         </ul>
       </td>
@@ -48,80 +48,63 @@
   </table>
 </div><!-- end header-wrap -->
 
-<div class='m-nav' id='m-nav' >
+<div class='m-nav' id='m-nav'>
   <div class='m-nav-positioning'>
-    <a href="/intro" class="m-nav-button" >Intro</a>
-    {{# if login }}
-      {{#if admin}}
-        <a class='m-nav-button' href='/admin/overview' >Overview (admin)</a>
-      {{/if}}
-      <a class='m-nav-button' href='/user/account' >Account</a>
-      <a class='m-nav-button' href='/user/logout' >Logout</a>
-    {{ else }}
-      <a class='m-nav-button' href='/user/entervault' >Enter Vault</a>
-      <a class='m-nav-button' href='/user/signup' >Sign Up</a>
+    <a href="/intro" class="m-nav-button">Intro</a>
+    {{#if login}}
+    {{#if admin}}
+    <a class='m-nav-button' href='/admin/overview'>Overview (admin)</a>
     {{/if}}
-    <a href="/blog" class="m-nav-button" >Blog</a>
-    <a href="/contact" class="m-nav-button" >Contact</a>
+    <a class='m-nav-button' href='/user/account'>Account</a>
+    <a class='m-nav-button' href='/user/logout'>Logout</a>
+    {{ else }}
+    <a class='m-nav-button' href='/user/entervault'>Enter Vault</a>
+    <a class='m-nav-button' href='/user/signup'>Sign Up</a>
+    {{/if}}
+    <a href="/blog" class="m-nav-button">Blog</a>
+    <a href="/contact" class="m-nav-button">Contact</a>
   </div>
 </div>
 
 
 
 
-    <div id='main-wrap'>
-      <div class='container'>
-<h1 class='single-header cart-header' >{{title}}</h1>
+<div id='main-wrap'>
+  <div class='container'>
+    <h1 class='single-header cart-header'>{{title}}</h1>
 
 
 
-{{#if accounts}}
-  {{#each accounts}}
-    <p><strong>Name: </strong>{{this.meta.name}}</p>
-    <p><strong>Number: </strong>{{this.meta.number}}</p>
-    {{#if ../isAdmin}}
-      <p><strong>Card Available: </strong>${{this.balance.available}}<br>
-      <p><strong>Card Current: </strong>${{this.balance.current}}</p>
+    {{#if accounts}}
+    {{#each accounts}}
+    <p><strong>Name: </strong>{{this.name}}</p>
+    <p><strong>Balance: </strong>{{this.balance.current}} Ounces</p>
+    {{/each}}
+
+
+    <h2 class='single-header cart-header'>Account Ledger</h2>
+
+    <table style="width:1050px; align:center;">
+      <tr>
+        <th>Date<br></th>
+        <th>Name<br></th>
+        <th>Amount in Dollars<br></th>
+        <th>Amount in Gold Ounces</br></th>
+      </tr>
+
+      {{#each transactions}}
+      <tr>
+        <td>{{#if this.date}}{{this.date}}{{/if}}</td>
+        <td>{{#if this.name}}{{this.name}}{{/if}}</td>
+        <td>{{#if this.amountUsd}}{{this.amountUsd}}{{/if}}</td>
+        <td>{{#if this.amountGoldOunces}}{{this.amountGoldOunces}}{{/if}}</td>
+      </tr>
+      {{/each}}
+    </table>
+
+    {{else}}
+    <h2>It appears you haven't made an account with us yet. Please contact us to see about possibly creating
+      one.</h2>
+
+    <a href='/contact/message'> Visit the Contact Page </a>
     {{/if}}
-  {{/each}}
-  <p><strong>Balance: </strong>{{balanceInOunces}} {{units}}</p><p>
-  <p>
-  
-  <h1 class='single-header cart-header' >Account Ledger</h2><p>
-  
-  <table style="width:1050px; align:center;">
-  <tr>
-    <th>Date<br></th>
-    <th>Name<br></th> 
-    <th>Amount in Dollars<br></th>
-    <th>Amount in Gold <br><form action="/admin/ounceConversion" method="post">
-  <select name="selector">
-    <option value="0" name="ounces" {{unitObj.ounces}} >Ounces</option>
-    <option value="1" name="thousandths" {{unitObj.milliounces}} >Thousandths of Ounces</option>
-    <option value="2" name="grams" {{unitObj.grams}} >Grams</option>
-  </select>
-  <button type="submit">Change Units</button>
-  <input type='hidden' name='_csrf' value='{{ csrfToken }}'>
-</form>
-
-
-
-    </th>
-        <th>Account</th>
-  </tr>
-
-    {{#each transactions}}
-<tr>
-<td>{{#if this.date}}{{this.date}}{{/if}}</td>
-<td>{{#if this.name}}{{this.name}}{{/if}}</td>
-<td>{{this.amount}}</td>
-<td>{{#if this.amountInOunces}}{{this.amountInOunces}}{{/if}}</td>
-<td>{{this.type.primary}}</td>
-  </tr> 
-  {{/each}}
-  </table>
-  
-{{else}}
-  <h2>It appears you haven't made an account with us yet. Please contact us to see about possibly creating one.</h2>	<p>
-  <a href='/contact/message' > Visit the Contact Page </a>
-{{/if}}

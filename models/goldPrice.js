@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var bcrypt = require('bcrypt-nodejs');
 
 var goldPriceSchema = new Schema({
-  goldPrice: {type: Number},
-  marketCloseDate: {type: String},
-  actualDate: {type: String}
+  // _id is not always used but there for consistency sake
+  _id: { type: Schema.Types.ObjectId, required: true },
+  amountUsdPerOunce: { type: Number, required: true },
+  date: { type: String, required: true },
 });
 
 module.exports = mongoose.model('GoldPrice', goldPriceSchema);

@@ -11,34 +11,34 @@
 
       <td class="nav">
         <ul class="m1-0-menu-default">
-          <li class="m1-0-menu-item-wrap" >
-            <a href="/intro" class="m1-0-menu-item" >Intro</a>
+          <li class="m1-0-menu-item-wrap">
+            <a href="/intro" class="m1-0-menu-item">Intro</a>
           </li>
           {{#if login }}
-            {{#if admin}}
-              <li class="m1-0-menu-item-wrap" >
-                <a href="/admin/admin" class="m1-0-menu-item" >Admin</a>
-              </li>
-            {{/if}}
-            <li class="m1-0-menu-item-wrap" >
-              <a href="/user/account" class="m1-0-menu-item" >Account</a>
-            </li>
-            <li class="m1-0-menu-item-wrap" >
-              <a href="/user/logout" class="m1-0-menu-item" >Logout</a>
-            </li>
-          {{else}}
-            <li class="m1-0-menu-item-wrap" >
-              <a href="/user/signup" class="m1-0-menu-item" >Sign up</a>
-            </li>
-            <li class="m1-0-menu-item-wrap" >
-              <a href="/user/entervault" class="m1-0-menu-item" >Vault</a>
-            </li>
-          {{/if}}
-          <li class="m1-0-menu-item-wrap" >
-            <a href="/blog" class="m1-0-menu-item" >Blog</a>
+          {{#if admin}}
+          <li class="m1-0-menu-item-wrap">
+            <a href="/admin/admin" class="m1-0-menu-item">Admin</a>
           </li>
-          <li id="active" class="m1-0-menu-item-wrap" >
-            <a href="/contact/message" class="m1-0-menu-item" >Contact</a>
+          {{/if}}
+          <li class="m1-0-menu-item-wrap">
+            <a href="/user/account" class="m1-0-menu-item">Account</a>
+          </li>
+          <li class="m1-0-menu-item-wrap">
+            <a href="/user/logout" class="m1-0-menu-item">Logout</a>
+          </li>
+          {{else}}
+          <li class="m1-0-menu-item-wrap">
+            <a href="/user/signup" class="m1-0-menu-item">Sign up</a>
+          </li>
+          <li class="m1-0-menu-item-wrap">
+            <a href="/user/entervault" class="m1-0-menu-item">Vault</a>
+          </li>
+          {{/if}}
+          <li class="m1-0-menu-item-wrap">
+            <a href="/blog" class="m1-0-menu-item">Blog</a>
+          </li>
+          <li id="active" class="m1-0-menu-item-wrap">
+            <a href="/contact/message" class="m1-0-menu-item">Contact</a>
           </li>
         </ul>
       </td>
@@ -48,21 +48,21 @@
   </table>
 </div><!-- end header-wrap -->
 
-<div class='m-nav' id='m-nav' >
+<div class='m-nav' id='m-nav'>
   <div class='m-nav-positioning'>
-    <a href="/intro" class="m-nav-button" >Intro</a>
+    <a href="/intro" class="m-nav-button">Intro</a>
     {{# if login }}
-      {{#if admin}}
-        <a class='m-nav-button' href='/admin/overview' >Overview (admin)</a>
-      {{/if}}
-      <a class='m-nav-button' href='/user/account' >Account</a>
-      <a class='m-nav-button' href='/user/logout' >Logout</a>
-    {{ else }}
-      <a class='m-nav-button' href='/user/entervault' >Enter Vault</a>
-      <a class='m-nav-button' href='/user/signup' >Sign Up</a>
+    {{#if admin}}
+    <a class='m-nav-button' href='/admin/overview'>Overview (admin)</a>
     {{/if}}
-    <a href="/blog" class="m-nav-button" >Blog</a>
-    <a href="/contact" class="m-nav-button" >Contact</a>
+    <a class='m-nav-button' href='/user/account'>Account</a>
+    <a class='m-nav-button' href='/user/logout'>Logout</a>
+    {{ else }}
+    <a class='m-nav-button' href='/user/entervault'>Enter Vault</a>
+    <a class='m-nav-button' href='/user/signup'>Sign Up</a>
+    {{/if}}
+    <a href="/blog" class="m-nav-button">Blog</a>
+    <a href="/contact" class="m-nav-button">Contact</a>
   </div>
 </div>
 
@@ -70,73 +70,86 @@
 
 
 
-    <div id='main-wrap'>
-      <div class='container'>
-<div id="m1-0-content" class="m1-0-elements m1-0-not-footer">
-  <div>
-    <div class="m1-0-image m1-0-image-border-none " style="padding-top:10px; padding-bottom:10px; margin-left:0; margin-right:0; text-align:center; ">
-      <a href="mailto:John@Midas.gold">
-        <img src="../images/bell.jpg" alt="Picture" style="width:auto;max-width:100%">
-      </a>
-    </div>
-  </div>
+<div id='main-wrap'>
+  <div class='container'>
+    <div id="m1-0-content" class="m1-0-elements m1-0-not-footer">
+      <div>
+        <div class="m1-0-image m1-0-image-border-none "
+          style="padding-top:10px; padding-bottom:10px; margin-left:0; margin-right:0; text-align:center; ">
+          <a href="mailto:John@Midas.gold">
+            <img src="../images/bell.jpg" alt="Picture" style="width:auto;max-width:100%">
+          </a>
+        </div>
+      </div>
 
-  <div>
-    <div class="m1-0-multicol">
-      <div class="m1-0-multicol-table-wrap" style="margin:0 -15px;">
-      <table class="m1-0-multicol-table">
-        <tbody class="m1-0-multicol-tbody">
-          <tr class="m1-0-multicol-tr">
-            <td class="m1-0-multicol-col" style="width:50%; padding:0 15px;">
-              <div>
-                <a>
-                  <img src="../images/businesscard.jpg" alt="Picture" style="width:435;max-width:100%">
-                </a>
-              </div>
-            </td>       
-            <td class="m1-0-multicol-col" style="width:50%; padding:0 15px;">
+      <div>
+        <div class="m1-0-multicol">
+          <div class="m1-0-multicol-table-wrap" style="margin:0 -15px;">
+            <table class="m1-0-multicol-table">
+              <tbody class="m1-0-multicol-tbody">
+                <tr class="m1-0-multicol-tr">
+                  <td class="m1-0-multicol-col" style="width:50%; padding:0 15px;">
+                    <div>
+                      <a>
+                        <img src="../images/businesscard.jpg" alt="Picture" style="width:435;max-width:100%">
+                      </a>
+                    </div>
+                  </td>
+                  <td class="m1-0-multicol-col" style="width:50%; padding:0 15px;">
 
 
-            <div id="570972898857986598" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml">
-              <form name="message-form" id="message-form">
-                <table class="contacttable" width="455px">
-                  <tbody>
-                    <tr>
-                      <td class="contacttd" valign="top">
-                        <input class="myInputarea" type="text" name="name" id="name" placeholder="Your name" maxlength="50" size="25" style="background-color:#FDFDFE; border:1px solid #DDA92E;font-family:'Quattrocento', serif; font-size: 16px; color: rgb(147, 112, 31); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
-                      </td>
-                      <td class="textTd" rowspan="4" valign="top">
-                        <textarea class="myTextarea" name="message" id="message" placeholder="Message" maxlength="2000" cols="27" style="background-color:#FDFDFE; border:1px solid #DDA92E; font-family:'Quattrocento', serif; font-size: 16px; color: rgb(147, 112, 31); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; line-height: 1.3em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"></textarea>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="contacttd" valign="top">
-                        <input class="myInputarea" type="text" name="email" id="email" placeholder="Email" maxlength="80" size="25" style="background-color:#FDFDFE; border:1px solid #DDA92E;font-family:'Quattrocento', serif; font-size: 16px; color: rgb(147, 112, 31); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="contacttd" valign="top">
-                        <input class="myInputarea" type="text" placeholder="Phone" name="tel" id="tel" maxlength="30" size="25" style="background-color:#FDFDFE; border:1px solid #DDA92E;font-family:'Quattrocento', serif; font-size: 16px; color: rgb(147, 112, 31); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="contacttd" valign="top">
-                        <input class="myInputarea" type="text" name="sub" id="sub" placeholder="Subject" maxlength="30" v-align="bottom" size="25" style="background-color:#FDFDFE; border:1px solid #DDA92E;font-family:'Quattrocento', serif; font-size: 16px; color: rgb(147, 112, 31); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="contacttd" colspan="2" style="text-align:right">
-                        <input type="submit" name="submit" id="submit" value="Send" style="border: 0px none; color: #F3E0B3; cursor: pointer; background-color: #93701F; font-family:'Quattrocento', serif; line-height: 1.3em; font-size: 18px; padding: 5px; top: 0px;">
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p id='success-div'>Your message was sent!</p>
-              </form>
+                    <div id="570972898857986598" align="left" style="width: 100%; overflow-y: hidden;"
+                      class="wcustomhtml">
+                      <form name="message-form" id="message-form">
+                        <table class="contacttable" width="455px">
+                          <tbody>
+                            <tr>
+                              <td class="contacttd" valign="top">
+                                <input class="myInputarea" type="text" name="name" id="name" placeholder="Your name"
+                                  maxlength="50" size="25"
+                                  style="background-color:#FDFDFE; border:1px solid #DDA92E;font-family:'Quattrocento', serif; font-size: 16px; color: rgb(147, 112, 31); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+                              </td>
+                              <td class="textTd" rowspan="4" valign="top">
+                                <textarea class="myTextarea" name="message" id="message" placeholder="Message"
+                                  maxlength="2000" cols="27"
+                                  style="background-color:#FDFDFE; border:1px solid #DDA92E; font-family:'Quattrocento', serif; font-size: 16px; color: rgb(147, 112, 31); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; line-height: 1.3em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"></textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="contacttd" valign="top">
+                                <input class="myInputarea" type="text" name="email" id="email" placeholder="Email"
+                                  maxlength="80" size="25"
+                                  style="background-color:#FDFDFE; border:1px solid #DDA92E;font-family:'Quattrocento', serif; font-size: 16px; color: rgb(147, 112, 31); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="contacttd" valign="top">
+                                <input class="myInputarea" type="text" placeholder="Phone" name="tel" id="tel"
+                                  maxlength="30" size="25"
+                                  style="background-color:#FDFDFE; border:1px solid #DDA92E;font-family:'Quattrocento', serif; font-size: 16px; color: rgb(147, 112, 31); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="contacttd" valign="top">
+                                <input class="myInputarea" type="text" name="sub" id="sub" placeholder="Subject"
+                                  maxlength="30" v-align="bottom" size="25"
+                                  style="background-color:#FDFDFE; border:1px solid #DDA92E;font-family:'Quattrocento', serif; font-size: 16px; color: rgb(147, 112, 31); padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="contacttd" colspan="2" style="text-align:right">
+                                <input type="submit" name="submit" id="submit" value="Send"
+                                  style="border: 0px none; color: #F3E0B3; cursor: pointer; background-color: #93701F; font-family:'Quattrocento', serif; line-height: 1.3em; font-size: 18px; padding: 5px; top: 0px;">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <p id='success-div'>Your message was sent!</p>
+                      </form>
+                    </div>
+              </tbody>
+            </table>
           </div>
-      </tbody>
-      </table>
+        </div>
       </div>
     </div>
-  </div>
-</div>

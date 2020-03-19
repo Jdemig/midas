@@ -11,34 +11,34 @@
 
       <td class="nav">
         <ul class="m1-0-menu-default">
-          <li class="m1-0-menu-item-wrap" >
-            <a href="/intro" class="m1-0-menu-item" >Intro</a>
+          <li class="m1-0-menu-item-wrap">
+            <a href="/intro" class="m1-0-menu-item">Intro</a>
           </li>
           {{#if login }}
-            {{#if admin}}
-              <li class="m1-0-menu-item-wrap" >
-                <a href="/admin/admin" class="m1-0-menu-item" >Admin</a>
-              </li>
-            {{/if}}
-            <li class="m1-0-menu-item-wrap" >
-              <a href="/user/account" class="m1-0-menu-item" >Account</a>
-            </li>
-            <li class="m1-0-menu-item-wrap" >
-              <a href="/user/logout" class="m1-0-menu-item" >Logout</a>
-            </li>
-          {{else}}
-            <li id="active" class="m1-0-menu-item-wrap" >
-              <a href="/user/signup" class="m1-0-menu-item" >Sign up</a>
-            </li>
-            <li class="m1-0-menu-item-wrap" >
-              <a href="/user/entervault" class="m1-0-menu-item" >Vault</a>
-            </li>
-          {{/if}}
-          <li class="m1-0-menu-item-wrap" >
-            <a href="/blog" class="m1-0-menu-item" >Blog</a>
+          {{#if admin}}
+          <li class="m1-0-menu-item-wrap">
+            <a href="/admin/admin" class="m1-0-menu-item">Admin</a>
           </li>
-          <li class="m1-0-menu-item-wrap" >
-            <a href="/contact/message" class="m1-0-menu-item" >Contact</a>
+          {{/if}}
+          <li class="m1-0-menu-item-wrap">
+            <a href="/user/account" class="m1-0-menu-item">Account</a>
+          </li>
+          <li class="m1-0-menu-item-wrap">
+            <a href="/user/logout" class="m1-0-menu-item">Logout</a>
+          </li>
+          {{else}}
+          <li id="active" class="m1-0-menu-item-wrap">
+            <a href="/user/signup" class="m1-0-menu-item">Sign up</a>
+          </li>
+          <li class="m1-0-menu-item-wrap">
+            <a href="/user/entervault" class="m1-0-menu-item">Vault</a>
+          </li>
+          {{/if}}
+          <li class="m1-0-menu-item-wrap">
+            <a href="/blog" class="m1-0-menu-item">Blog</a>
+          </li>
+          <li class="m1-0-menu-item-wrap">
+            <a href="/contact/message" class="m1-0-menu-item">Contact</a>
           </li>
         </ul>
       </td>
@@ -48,21 +48,21 @@
   </table>
 </div><!-- end header-wrap -->
 
-<div class='m-nav' id='m-nav' >
+<div class='m-nav' id='m-nav'>
   <div class='m-nav-positioning'>
-    <a href="/intro" class="m-nav-button" >Intro</a>
+    <a href="/intro" class="m-nav-button">Intro</a>
     {{# if login }}
-      {{#if admin}}
-        <a class='m-nav-button' href='/admin/overview' >Overview (admin)</a>
-      {{/if}}
-      <a class='m-nav-button' href='/user/account' >Account</a>
-      <a class='m-nav-button' href='/user/logout' >Logout</a>
-    {{ else }}
-      <a class='m-nav-button' href='/user/entervault' >Enter Vault</a>
-      <a class='m-nav-button' href='/user/signup' >Sign Up</a>
+    {{#if admin}}
+    <a class='m-nav-button' href='/admin/overview'>Overview (admin)</a>
     {{/if}}
-    <a href="/blog" class="m-nav-button" >Blog</a>
-    <a href="/contact" class="m-nav-button" >Contact</a>
+    <a class='m-nav-button' href='/user/account'>Account</a>
+    <a class='m-nav-button' href='/user/logout'>Logout</a>
+    {{ else }}
+    <a class='m-nav-button' href='/user/entervault'>Enter Vault</a>
+    <a class='m-nav-button' href='/user/signup'>Sign Up</a>
+    {{/if}}
+    <a href="/blog" class="m-nav-button">Blog</a>
+    <a href="/contact" class="m-nav-button">Contact</a>
   </div>
 </div>
 
@@ -73,15 +73,18 @@
 
 <div id='main-wrap'>
   <div class='container'>
-  <center>    
     <center>
-<div style="display: table; width:512px; height: 662px; padding-top:0px; padding-bottom:0px; margin-left:0; margin-right:0; text-align:center; background-image: url('../images/paper.png'); background-repeat: no-repeat; background-position: center center; align-items: center">
+      <center>
+        <div
+          style="display: table; width:512px; height: 662px; padding-top:0px; padding-bottom:0px; margin-left:0; margin-right:0; text-align:center; background-image: url('../images/paper.png'); background-repeat: no-repeat; background-position: center center; align-items: center">
 
- <div style="padding-top:78px; margin-left:100px; font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 27px; color: black; line-height: 30px; text-align: left;">
-Currently in Private Beta Testing.<br>
-<br>Please check back soon. 
- </div>
+          <div
+            style="padding-top:78px; margin-left:100px; font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 27px; color: black; line-height: 30px; text-align: left;">
+            Currently in Private Beta Testing.<br>
+            <br>Please check back soon.
+          </div>
 
-    </div> </center>   
+        </div>
+      </center>
   </div>
 </div>
