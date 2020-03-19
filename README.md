@@ -1,4 +1,4 @@
-# midas
+# Midas
 
 Project built back in 2016.
 

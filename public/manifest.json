@@ -1,0 +1,15 @@
+{
+  "name": "MIDAS",
+  "icons": [
+    {
+      "src": "/images/favicon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#1e9c9b",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#1e9c9b"
+}
