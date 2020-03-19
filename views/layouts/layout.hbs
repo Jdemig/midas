@@ -10,12 +10,72 @@
   <link rel="manifest" href="/manifest.json">
   <link rel='stylesheet' href='../stylesheets/style.css'>
   <link rel='stylesheet' href='../stylesheets/style.css' media='only screen and (max-width:750px)'>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="m-auto">
+  <div class="px-3" id="header-wrap">
+    <table id="header">
+      <tr>
+        <td id="logo">
+          <span class="m1-0-logo">
+            <a href="/">
+              <span id="m1-0-title">MIDAS</span>
+            </a>
+          </span>
+        </td>
+
+        <td class="nav">
+          <ul class="m1-0-menu-default">
+            <li class="m1-0-menu-item-wrap">
+              <a href="/intro" class="m1-0-menu-item">Intro</a>
+            </li>
+            {{#if login}}
+            {{#if admin}}
+            <li class="m1-0-menu-item-wrap">
+              <a href="/admin/admin" class="m1-0-menu-item">Admin</a>
+            </li>
+            {{/if}}
+            <li id="active" class="m1-0-menu-item-wrap">
+              <a href="/user/account" class="m1-0-menu-item">Vault</a>
+            </li>
+            <li class="m1-0-menu-item-wrap">
+              <a href="/user/logout" class="m1-0-menu-item">Logout</a>
+            </li>
+            {{else}}
+            <li id="pg136241869276186126" class="m1-0-menu-item-wrap">
+              <a href="/user/signup" class="m1-0-menu-item">Sign up</a>
+            </li>
+            <li id="active" class="m1-0-menu-item-wrap">
+              <a href="/user/entervault" class="m1-0-menu-item">Vault</a>
+            </li>
+            {{/if}}
+            <li id="pg859576902690700031" class="m1-0-menu-item-wrap">
+              <a href="/blog" class="m1-0-menu-item">Blog</a>
+            </li>
+            <li id="pg336641080812431241" class="m1-0-menu-item-wrap">
+              <a href="/contact/message" class="m1-0-menu-item">Contact</a>
+            </li>
+          </ul>
+        </td>
+
+        <td class="search">${{goldData}}/oz</td>
+      </tr>
+    </table>
+  </div><!-- end header-wrap -->
+
   {{{body}}}
-  </div>
-  </div>
+
+
+  <footer>
+    <div class="my-3 navbar-header">
+      <a class="mx-3" href='/'>MIDAS</a>
+      <a class="mx-3 navbar-brand" href="/message/message" id='logo-name'>Contact</a>
+      <a class="mx-3 navbar-brand" href="/" id='logo-name'>Sitemap</a>
+      <a class="mx-3 navbar-brand" href="/terms" id='logo-name'>Terms of use</a>
+    </div>
+  </footer>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src='../javascripts/custom-dev.js'></script>
 </body>
