@@ -24,10 +24,6 @@ router.post('/deposit', isAdmin, function (req, res) {
   var note = req.body.note;
   var date = req.body.date;
 
-  console.log(email);
-  console.log(depositAmount);
-  console.log(date);
-
   User.findOne({ 'email': email }, function (err, user) {
     if (!err) {
       GoldPrice.findOne({ 'actualDate': date }, function (err, gold) {
@@ -39,7 +35,7 @@ router.post('/deposit', isAdmin, function (req, res) {
         });
         deposit.save(function (err) {
           if (err) {
-            console.log(err);
+            console.error(err);
           } else {
             var transaction = new Transaction({
               _id: mongoose.Types.ObjectId(),
@@ -51,7 +47,7 @@ router.post('/deposit', isAdmin, function (req, res) {
             });
             transaction.save(function (err) {
               if (err) {
-                console.log(err);
+                console.error(err);
               } else {
                 res.redirect('/user/account');
               }
@@ -66,7 +62,6 @@ router.post('/deposit', isAdmin, function (req, res) {
 router.post('/ounceConversion', function (req, res) {
   var userId = req.user._id;
   var selector = parseInt(req.body.selector);
-  console.log(typeof selector);
 
   User.update({ '_id': userId },
     {
@@ -75,7 +70,7 @@ router.post('/ounceConversion', function (req, res) {
       }
     }, function (err, result) {
       if (err) {
-        console.log(err);
+        console.error(err);
       } else {
         if (result.nModified == 1) {
           res.redirect('/user/account');

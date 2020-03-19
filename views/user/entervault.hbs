@@ -88,13 +88,13 @@
               {{/if}}
               <form class='user-form' action='/user/entervault' method='post'>
                 <div class='form-group'>
-                  <input type='email' id='email' name='email' class='vault-sign-in' placeholder='Email Address'>
-                  </input>
+                  <input type='email' id='email' name='email' class='vault-sign-in' placeholder='Email Address'
+                    value="test.user@gmail.com" />
                 </div>
                 <br>
                 <div class='form-group'>
-                  <input type='password' id='password' name='password' class='vault-sign-in' placeholder='Password'>
-                  </input>
+                  <input type='password' id='password' name='password' class='vault-sign-in' placeholder='Password'
+                    value='asdf1234' />
                 </div>
                 <br><br>
                 <input type='hidden' name='_csrf' value='{{ csrfToken }}'>

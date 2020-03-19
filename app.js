@@ -65,7 +65,6 @@ app.use(function (req, res, next) {
     var date = new Date(yesterday).toJSON().slice(0, 10);
     // gets the gold price by actual date to display in top right corner of site
     GoldPrice.find({ 'date': date }, function (err, gold) {
-      console.log(gold);
       if (gold.length == 0) {
         if (currentTry > 15) {
           next();
